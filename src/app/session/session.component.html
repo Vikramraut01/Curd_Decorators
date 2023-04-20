@@ -1,0 +1,202 @@
+<div class="container" id="form">
+  <form id="f_content" [formGroup]="studentDetail" (ngSubmit)="submitData()">
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput"
+        formControlName="name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Adress</label>
+      <input
+        class="form-control"
+        id="formGroupExampleInput"
+        formControlName="adress"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="formGroupExampleInput"
+        formControlName="email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Education</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput"
+        formControlName="education"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Phone No.</label>
+      <input
+        type="number"
+        class="form-control"
+        id="formGroupExampleInput"
+        formControlName="phoneNo"
+      />
+    </div>
+
+    <div class="col-12">
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="studentDetail.invalid"
+      >
+        Submit
+      </button>
+
+      <button
+        class="btn btn-primary"
+        style="margin-left: 20px"
+        type="button"
+        (click)="allData(1)"
+      >
+        GetAllStudent
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="container" id="allData" *ngIf="alrt == 1">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Adress</th>
+        <th>Email</th>
+        <th>Education</th>
+        <th>Phone No.</th>
+        <th>Action</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of allArray; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.adress }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.education }}</td>
+        <td>{{ item.phoneNo }}</td>
+        <td>
+          <button
+            class="btn btn-outline-primary"
+            (click)="deletStudent(i, item.id)"
+          >
+            Delet
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-outline-primary"
+            (click)="editStudent(i, item.id)"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            data-bs-whatever="@mdo"
+          >
+            Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Student</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="margin: auto">
+        <form id="f_content" [formGroup]="editDetail" (ngSubmit)="submitData()">
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              formControlName="name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Adress</label>
+            <input
+              class="form-control"
+              id="formGroupExampleInput"
+              formControlName="adress"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="formGroupExampleInput"
+              formControlName="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label"
+              >Education</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              formControlName="education"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label"
+              >Phone No.</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              formControlName="phoneNo"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+
+        <button
+          data-bs-dismiss="modal"
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="editDetail.invalid"
+          (click)="updateData(editDetail.value)"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

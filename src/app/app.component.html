@@ -1,11 +1,32 @@
-<h1>Lazyloading</h1>
+<!-- <h1>Lazyloading</h1>
 <ul>
   <li><a routerLink="lazy/login">login</a></li>
   <li><a routerLink="lazy/list">list</a></li>
 </ul>
 <router-outlet></router-outlet>
 
-<h1>{{ ds }}</h1>
-<!-- <app-child (sayHii)="sayHii($event)"></app-child> -->
 
-<app-child2 [hero]="data"></app-child2>
+<app-curd-mat></app-curd-mat>
+
+<app-session></app-session>
+
+<app-youtube></app-youtube>
+
+-->
+<h1>ParentToChild</h1>
+<h1>{{ data }}</h1>
+
+<br />
+<hr />
+<h1>ParentToChild</h1>
+<input type="text" #id class="parent" />
+<button (click)="sendData(id.value)">send</button>
+<br />
+<hr />
+<app-child (demo)="recive($event)"></app-child>
+
+<br />
+<hr />
+<app-child2 [hero]="parentToChild"></app-child2>
+
+<hr />

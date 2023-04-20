@@ -1,0 +1,39 @@
+<div class="container" id="cont">
+  <form id="f_content" [formGroup]="studentData">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Adress</mat-label>
+      <input matInput formControlName="adress" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Education</mat-label>
+      <input matInput formControlName="education" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>PhoneNo</mat-label>
+      <input matInput formControlName="phoneNo" type="number" />
+    </mat-form-field>
+    <div>
+      <button
+        mat-raised-button
+        color="accent"
+        [disabled]="studentData.invalid"
+        (click)="sendData()"
+        routerLink="edit"
+      >
+        Submit
+      </button>
+      <button mat-raised-button color="accent" routerLink="edit">
+        ShowAll
+      </button>
+    </div>
+  </form>
+</div>
+<router-outlet></router-outlet>

@@ -7,6 +7,14 @@ import { Component,Output,EventEmitter } from '@angular/core';
 })
 export class ChildComponent {
 
-  @Output() sayHii=new EventEmitter<string>();
   
+  
+dom:string='ksnjnd'
+@Output() demo:any=new EventEmitter();
+
+sendData(data:any)
+{
+  this.demo.emit(data);
+}
+
 }

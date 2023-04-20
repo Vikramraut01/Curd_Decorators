@@ -1,0 +1,20 @@
+#f_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#f_content {
+  width: 300px;
+  align-items: center;
+  align-content: center;
+}
+
+#cont {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAtDhOZ8WS86oqQntzORskZcEwORlILZwV7Q&usqp=CAU");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}

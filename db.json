@@ -1,0 +1,55 @@
+{
+  "user": [
+    {
+      "name": "asas",
+      "city": "sasa",
+      "id": 1
+    },
+    {
+      "name": "sunil",
+      "city": "lengare",
+      "id": 2
+    },
+    [],
+    [],
+    {
+      "name": "senwell",
+      "city": "pune",
+      "id": 5
+    }
+  ],
+  "Student": [
+    {
+      "name": "gaju molak",
+      "adress": "A/p-kolakata",
+      "email": "gajunana@gmail.com",
+      "education": "btech",
+      "phoneNo": "820221636",
+      "id": 2
+    },
+    {
+      "name": "suraj",
+      "adress": "pune",
+      "email": "su@gmail.com",
+      "education": "mtech",
+      "phoneNo": 8895263,
+      "id": 4
+    },
+    {
+      "name": "Tushar",
+      "adress": "pune",
+      "email": "tushar@gmail.com",
+      "education": "btech",
+      "phoneNo": 982323232,
+      "id": 5
+    },
+    {
+      "name": "tusha",
+      "adress": "mumbai",
+      "email": "tushar@gmail.com",
+      "education": "bcs",
+      "phoneNo": 985121,
+      "id": 6
+    }
+  ]
+}
